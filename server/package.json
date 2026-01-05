@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Personal finance tracker",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "dev"
+    "test": "dev",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,14 @@
     "Atlas"
   ],
   "author": "Ashish Pawar",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.2",
+    "nodemon": "^3.1.11"
+  }
 }
