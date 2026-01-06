@@ -1,0 +1,25 @@
+{
+  "name": "personal-financial-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashish-Pawar-AP/Personal-financial-Dashboard.git"
+  },
+  "keywords": [
+    "Personal-financial-dashboard"
+  ],
+  "author": "Ashish Pawar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashish-Pawar-AP/Personal-financial-Dashboard/issues"
+  },
+  "homepage": "https://github.com/Ashish-Pawar-AP/Personal-financial-Dashboard#readme",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
