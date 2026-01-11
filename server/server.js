@@ -5,6 +5,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.routes.js";
 import incomeRoutes from "./routes/income.routes.js";
 import expenseRoutes from "./routes/expense.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 const app = express();
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/v1/users", authRoutes);
 app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
+app.use("/api/v1/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running");
