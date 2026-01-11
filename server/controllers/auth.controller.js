@@ -44,7 +44,7 @@ const loginUser = async (req, res)=>{
     try {
         const {email, password} = req.body
 
-        if(!email.trim() || !password.trim()){
+        if(!email || !password){
             res.status(401).json({message:"All fields are required"})
         }
 

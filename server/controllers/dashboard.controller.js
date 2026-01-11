@@ -13,6 +13,31 @@ const getDashboardSummary = async (req, res) => {
     const totalExpense = expense.reduce((sum, item) => sum + item.amount, 0);
 
     const balance = totalIncome - totalExpense;
+    const monthlyData = {};
+
+    income.forEach((item) => {
+      const month = new Date(item.date).toLocaleString("default", {
+        month: "short",
+      });
+
+      if (!monthlyData[month]) {
+        monthlyData[month] = { income: 0, expense: 0 };
+      }
+
+      monthlyData[month].income += item.amount;
+    });
+
+    expense.forEach((item) => {
+      const month = new Date(item.date).toLocaleString("default", {
+        month: "short",
+      });
+
+      if (!monthlyData[month]) {
+        monthlyData[month] = { income: 0, expense: 0 };
+      }
+
+      monthlyData[month].expense += item.amount;
+    });
 
     const expenseByCategory = {};
 
@@ -26,6 +51,7 @@ const getDashboardSummary = async (req, res) => {
       totalExpense,
       balance,
       expenseByCategory,
+      monthlyData,
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error" });
